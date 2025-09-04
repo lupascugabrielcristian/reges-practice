@@ -35,3 +35,17 @@ button:hover {
     min-height: 70px;
     overflow-wrap: anywhere;
 }
+
+.column {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    row-gap: 20px;
+}
+
+.column input {
+    width: calc(100% - 18px);
+}
+
+.footer {
+    height: 400px;
+}

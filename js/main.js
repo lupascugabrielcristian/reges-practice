@@ -65,3 +65,35 @@ document.getElementById('profileForm').addEventListener('submit', async (e) => {
         resultDiv.innerHTML = `Error: ${error.message}`;
     }
 });
+
+// ADAUGARE CONTRACT
+document.getElementById('adaugareContractForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const authToken = document.getElementById('result-auth').textContent;
+    const field1 = document.getElementById('field1').value;
+    const field2 = document.getElementById('field2').value;
+    const resultDiv = document.getElementById('result-adaugare-contract');
+    
+    try {
+        const response = await fetch('api/adaugare-contract.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ authToken, field1, field2 })
+        });
+        
+        const data = response;
+        const dataJson = await response.json();
+
+        if (!dataJson) {
+          resultDiv.innerHTML = `Server error: ${response.statusText}`;
+        } else {
+          resultDiv.innerHTML = JSON.stringify(dataJson);
+        }
+
+    } catch (error) {
+        resultDiv.innerHTML = `Error: ${error.message}`;
+    }
+});
