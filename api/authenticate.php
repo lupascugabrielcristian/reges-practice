@@ -11,7 +11,6 @@ $json = file_get_contents('php://input');
 $data = json_decode($json, true);
 
 // Process the message
-// $message = isset($data['message']) ? $data['message'] : '';
 $userId = $data['userId'] ?? '';
 $password = $data['password'] ?? '';  
 
