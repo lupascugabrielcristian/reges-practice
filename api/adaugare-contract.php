@@ -51,6 +51,7 @@ $formData = [
         'salariuValuta' => 800,
         'moneda' => 'EUR',
         'nivelStudii' => 'MG',
+        'stareCurenta' => [],
         'timpMunca' => [
             'norma' => 'NormaIntreaga840',
             'durata' => 8,
@@ -108,7 +109,6 @@ if (curl_errno($ch))
 {
     echo 'cURL Error: ' . $error_msg;
     $error_msg = curl_error($ch);
-    // echo json_encode(['error' => $error_msg]);
 
     echo json_encode([
         'status' => 200,
@@ -131,7 +131,7 @@ else if ($response == '')
 else {
     error_log('call ok: ' . json_encode($response) );
     echo json_encode([
-        'status' => 200,
+        'status' => 2000,
         'response' => $response,
         'error' => ''
     ]);
