@@ -26,10 +26,24 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
 $response = curl_exec($ch);
 
-echo json_encode($response);
-
 curl_close($ch);
 
-error_log("Response: " . json_encode($response) );
+// error_log("Response: " . json_encode($response) );
+
+if (curl_errno($ch)) 
+{
+    echo "cURL Error: " . $error_msg;
+    $error_msg = curl_error($ch);
+    echo json_encode(['error' => $error_msg]);
+} 
+else if ($response == '') 
+{
+    // Daca raspunsul este gol, inseamna ca status code arata ce eroare a fost
+    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    echo json_encode(['status_code' => $status_code] );
+}
+else {
+    echo json_encode($response);
+}
 
 ?>

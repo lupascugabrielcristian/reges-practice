@@ -14,14 +14,12 @@ $url = 'https://api.test.inspectiamuncii.org/api/Contract';
 $json = file_get_contents('php://input');
 $data = json_decode($json, true);
 $authToken = $data['authToken'] ?? '';
-$field1 = $data['field1'] ?? '';
-$field2 = $data['field2'] ?? '';
 $headers = [
     'Authorization: Bearer ' . $authToken,
-    'Accept: application/json'
+    'Content-Type: application/json',
 ];
 
-$defaultData = [
+$formData = [
     '$type' => 'contract',
     'header' => [
         'messageId' => '117f9b03-9efb-4f5a-8ebb-7ab3b0c792ae',
@@ -49,38 +47,10 @@ $defaultData = [
         'exceptieDataSfarsit' => 'Art83LitH',
         'numarContract' => '9022',
         'radiat' => false,
-        'salariu' => 4000,
+        'salariu' => 4800,
         'salariuValuta' => 800,
         'moneda' => 'EUR',
         'nivelStudii' => 'MG',
-        'sporuriSalariu' => [
-            [
-                'isProcent' => true,
-                'valoare' => 2100,
-                'tip' => [
-                    '$type' => 'spor',
-                    'referinta' => [
-                        '$type' => 'referinta',
-                        'id' => '7178F5A4-687F-4DA7-928C-1395EC531879'
-                    ],
-                    'nume' => 'Salariu de merit'
-                ]
-            ],
-            [
-                'isProcent' => false,
-                'valoare' => 1000,
-                'moneda' => 'EUR',
-                'tip' => [
-                    '$type' => 'sporAngajator',
-                    'referinta' => [
-                        '$type' => 'referinta',
-                        'id' => '30195246-89CE-4E33-AC15-F4E8628CAB4D'
-                    ],
-                    'nume' => 'Salariu de merit angajator'
-                ]
-            ]
-        ],
-        'stareCurenta' => [],
         'timpMunca' => [
             'norma' => 'NormaIntreaga840',
             'durata' => 8,
@@ -91,7 +61,7 @@ $defaultData = [
             'sfarsitInterval' => '2024-01-01T18:30:00.000',
             'notaRepartizareMunca' => 'Miercuri vine de la 12:00',
             'tipTura' => 'Alta',
-            'observatiiTipTuraAlta' => 'Program flexibil'
+            'observatiiTipTuraAlta' => 'Program flexibil'        
         ],
         'tipContract' => 'ContractIndividualMunca',
         'tipDurata' => 'Nedeterminata',
@@ -116,12 +86,11 @@ $defaultData = [
         ]
     ]
 ];
+$jsonData = json_encode($formData);
 
-// Suprascriu cu ce vine din request
-// $defaultData['continut']['salariu'] = 4800;
-
-// 1. Convertim array-ul PHP într-un string JSON
-$jsonData = json_encode($defaultData, JSON_PRETTY_PRINT);
+// suprascriu cu ce vine din request
+$field1 = $data['field1'] ?? '';
+$field2 = $data['field2'] ?? '';
 
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_URL, $url);
@@ -133,11 +102,39 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 $response = curl_exec($ch);
 $error_msg = curl_error($ch);
 
-echo json_encode($response);
-
 curl_close($ch);
 
-error_log("Response: " . json_encode($response) );
-error_log("Error: " . $error_msg );
+if (curl_errno($ch)) 
+{
+    echo 'cURL Error: ' . $error_msg;
+    $error_msg = curl_error($ch);
+    // echo json_encode(['error' => $error_msg]);
+
+    echo json_encode([
+        'status' => 200,
+        'response' => $response,
+        'error' => $error_msg
+    ]);
+} 
+else if ($response == '') 
+{
+    error_log('Response is empty');
+    // Daca raspunsul este gol, inseamna ca status code arata ce eroare a fost
+    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    // echo json_encode(['status_code' => $status_code] );
+    echo json_encode([
+        'status' => $status_code, 
+        'response' => '',
+        'error' => ''
+    ]);
+}
+else {
+    error_log('call ok: ' . json_encode($response) );
+    echo json_encode([
+        'status' => 200,
+        'response' => $response,
+        'error' => ''
+    ]);
+}
 
 ?>
