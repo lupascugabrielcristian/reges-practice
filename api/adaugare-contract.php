@@ -130,7 +130,6 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-var_dump($ch);
 $response = curl_exec($ch);
 
 

@@ -36,7 +36,7 @@ document.getElementById('authenticateForm').addEventListener('submit', async (e)
 });
 
 // PROFILE
-const myAuthToken = `eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0QWZKOTk2XzhaZkUzVVczSHpBcGgzbjRaREVLcDdyaWE0SlVHLWNoN2FnIn0.eyJleHAiOjE3NTczNDY4OTAsImlhdCI6MTc1NzM0NTA5MCwianRpIjoiZmRkNTQ3ZjEtMmE3ZC00NTA1LWFjNzktYzNiMGJjZTExMGJmIiwiaXNzIjoiaHR0cHM6Ly9zc28uZGV2Lmluc3BlY3RpYW11bmNpaS5vcmcvcmVhbG1zL0FQSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIxOGJlNTE1Yi1hNjdmLTQ2NjAtYjZlYS1mNjM0OWJjMThiMjciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZWdlcy1hcGkiLCJzaWQiOiJlOWMwZjYzZS0zZGMzLTQ5NGYtYjFiMy1iNThkN2IwNTRjYjAiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYXBpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNSSVNUSUFOIExVUEFTQ1UgQklOQVJZIEZVU0lPTiBTLlIuTC4iLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiIyMzJmN2RmYy0wYzM2LTRjMjMtYWVhNy0yNzE0MTUzNzJjZGUiLCJnaXZlbl9uYW1lIjoiQ1JJU1RJQU4gTFVQQVNDVSIsImF1dGhvcklkIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlIiwiZmFtaWx5X25hbWUiOiJCSU5BUlkgRlVTSU9OIFMuUi5MLiIsImVtYWlsIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlQGluc3BlY3RpYW11bmNpaS5ybyJ9.XFRhem7_H5c2vlNw_4PEiOdZzbgPKt13ULoB7HR-Yf4g_sRrDSqPXN7Q-16iCOiAh4Ra_Q1nvrIdS0n6_k6YhqJ4RJzYyVcLarbwbdZLd-lVnZG3kfTpYPXTc_fTNskQKHuhA_hBoJM6tDBye0uJiWP0eRmfEiDz-RAqC0x56iq63vCPZb52PyekKRGmdU7v0gnGv3YSwzIDjwj1edraiR7AuolwB4_7udlr80VqKQ6kpACGC7tYPKmefjLbanIQso2pnGM5vSyVFtg8ry6-jkgz1MnzWFyaCu4lIh70nYrckEuipqE_M5Rk_iCZiIQdTfR6i030lYSVozzHo8NpjQ`
+const myAuthToken = `eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0QWZKOTk2XzhaZkUzVVczSHpBcGgzbjRaREVLcDdyaWE0SlVHLWNoN2FnIn0.eyJleHAiOjE3NTczNDkxMzIsImlhdCI6MTc1NzM0NzMzMiwianRpIjoiMzIwMjQyMjItMDMwOS00MDRkLWE5YzktNTYzNjQ1YzE1ZWIxIiwiaXNzIjoiaHR0cHM6Ly9zc28uZGV2Lmluc3BlY3RpYW11bmNpaS5vcmcvcmVhbG1zL0FQSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIxOGJlNTE1Yi1hNjdmLTQ2NjAtYjZlYS1mNjM0OWJjMThiMjciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZWdlcy1hcGkiLCJzaWQiOiJjMjllNWJjNS1hNWQxLTQzOWQtYWI3My0wZGFjZmI2MzU5ZjAiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYXBpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNSSVNUSUFOIExVUEFTQ1UgQklOQVJZIEZVU0lPTiBTLlIuTC4iLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiIyMzJmN2RmYy0wYzM2LTRjMjMtYWVhNy0yNzE0MTUzNzJjZGUiLCJnaXZlbl9uYW1lIjoiQ1JJU1RJQU4gTFVQQVNDVSIsImF1dGhvcklkIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlIiwiZmFtaWx5X25hbWUiOiJCSU5BUlkgRlVTSU9OIFMuUi5MLiIsImVtYWlsIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlQGluc3BlY3RpYW11bmNpaS5ybyJ9.N5pIP3TVCNZC9FYJY6P6eHXQtPfJeYBShkBKVXa3xFauSUGNwDiRG5lIAcwmtyqqhu9s1do0CuB_bOWjjVf1F8YWwx_5o_XYE-uG4C0n2a3L0B7au_FECfD6efRr2Wec-jeJC3a0m_fQjZoGbdLlCAy9-4dC95g8Ivzu5Ax2fEx8ahqRjLW-zHz-Tq0RR3kAZbCFPaIwUkeolvxNY3tlYBNkbcUR8f4FTW4UnirDcC4VHWiCEPw0TCixcEAInOkqGBjI5YGRv1XKE7zYaAdW3u82jWUHbrPRu2QI208osAnFiqe6R9hLSNKfZRN6xjVvV4EhBgYCDz2Rm4nr3o6AEg`
 document.getElementById('result-auth').textContent = myAuthToken;
 document.getElementById('profileForm').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -109,6 +109,59 @@ document.getElementById('adaugareContractForm').addEventListener('submit', async
                 }
             }
         } catch (err_p) {
+            resultDiv.innerHTML = await response.text();
+        }
+
+    } catch (error) {
+        resultDiv.innerHTML = `Error: ${error.message}`;
+    }
+});
+
+// READ MESSAGE
+document.getElementById('readMessageForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const authToken = document.getElementById('result-auth').textContent;
+    const resultDiv = document.getElementById('result-read-message');
+    
+    try {
+        const response = await fetch('api/read-message.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ authToken })
+        });
+        
+        try {
+            let dataJson = await response.clone().json();
+
+            if (!dataJson ) {
+                resultDiv.innerHTML = `Server errr: ${dataJson }`;
+            } 
+            else {
+                if (dataJson.status == 200) {
+                    const responseJson = JSON.parse(dataJson['response'])
+                    console.log(responseJson);
+                    var text = responseJson.result.code + '</br>';
+                    text += 'Ref: ' + responseJson.result.ref + '</br>';
+                    text += 'ResponseId: ' + responseJson.responseId + '</br>';
+                    text += responseJson.result.description + '</br>';
+
+                    resultDiv.innerHTML = text;
+                } else if (dataJson.status == 2000) {
+                    resultDiv.innerHTML = 'CERERE TRIMISA <\br>'+ dataJson.response;
+                }
+                else if (dataJson.status == 401) {
+                    resultDiv.innerHTML = '401 - Tokenul a exirat';
+                }
+                else {
+                    // Rezultatul are date
+                    resultDiv.innerHTML = JSON.stringify(dataJson);
+                }
+            }
+        } catch (err_p) {
+            debugger;
             resultDiv.innerHTML = await response.text();
         }
 
