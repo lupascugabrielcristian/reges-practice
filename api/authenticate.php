@@ -17,7 +17,7 @@ $userId = $data['userId'] ?? '';
 $password = $data['password'] ?? '';  
 
 // POST call to https://sso.dev.inspectiamuncii.org/realms/API/protocol/openid-connect/token with userId and password in body
-$formData = [
+$formData_au = [
   'grant_type' => 'password',
   'client_id' => 'reges-api',
   'username' => $userId,
@@ -29,7 +29,7 @@ $ch = curl_init();
 
 curl_setopt($ch, CURLOPT_URL, $url);
 curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($formData));
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($formData_au));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 $response = curl_exec($ch);
@@ -38,3 +38,4 @@ echo json_encode($response);
 
 curl_close($ch);
 
+?>

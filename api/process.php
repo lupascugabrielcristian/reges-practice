@@ -18,3 +18,4 @@ $response = array(
 
 // Send response back
 echo json_encode($response);
+?>
