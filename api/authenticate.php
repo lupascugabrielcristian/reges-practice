@@ -34,7 +34,33 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 $response = curl_exec($ch);
 
-echo json_encode($response);
+if (curl_errno($ch)) 
+{
+    echo 'cURL Error: ' . $curl_error($ch);
+    $error_msg = curl_error($ch);
+
+    echo json_encode([
+        'status' => 200,
+        'response' => $response,
+        'error' => $error_msg
+    ]);
+} 
+else if ($response == '') 
+{
+    error_log('Response is empty');
+    // Daca raspunsul este gol, inseamna ca status code arata ce eroare a fost
+    $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    // echo json_encode(['status_code' => $status_code] );
+    echo json_encode([
+        'status' => $status_code, 
+        'response' => '',
+        'error' => ''
+    ]);
+}
+else {
+  echo json_encode($response);
+}
+
 
 curl_close($ch);
 

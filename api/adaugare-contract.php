@@ -14,6 +14,7 @@ $url = 'https://api.test.inspectiamuncii.org/api/Contract';
 $json = file_get_contents('php://input');
 $data = json_decode($json, true);
 $authToken = $data['authToken'] ?? '';
+error_log(sprintf("Auth token received: %s \n" . $authToken,  date('Y-m-d H:i')));
 $headers = [
     'Authorization: Bearer ' . $authToken,
     'Accept: */*',
@@ -154,15 +155,14 @@ else if ($response == '')
         'status' => $status_code, 
         'response' => '',
         'error' => ''
-    ]);
+    ], true);
 }
 else {
-    error_log('call ok: ' . json_encode($response) );
     echo json_encode([
         'status' => 2000,
         'response' => $response,
         'error' => ''
-    ]);
+    ], true);
 }
 
 curl_close($ch);
