@@ -36,7 +36,7 @@ document.getElementById('authenticateForm').addEventListener('submit', async (e)
 });
 
 // PROFILE
-const myAuthToken = `eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0QWZKOTk2XzhaZkUzVVczSHpBcGgzbjRaREVLcDdyaWE0SlVHLWNoN2FnIn0.eyJleHAiOjE3NTc0MTUxMTgsImlhdCI6MTc1NzQxMzMxOCwianRpIjoiODBjMWFmODktYjMwYS00M2MwLWI2YTctNzk4NTg1OTdmYjY0IiwiaXNzIjoiaHR0cHM6Ly9zc28uZGV2Lmluc3BlY3RpYW11bmNpaS5vcmcvcmVhbG1zL0FQSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIxOGJlNTE1Yi1hNjdmLTQ2NjAtYjZlYS1mNjM0OWJjMThiMjciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZWdlcy1hcGkiLCJzaWQiOiJmNzk2YTE1Yy05MmI1LTQ0ZjAtODJmMy04MjUzNjBlMDViNmMiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYXBpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNSSVNUSUFOIExVUEFTQ1UgQklOQVJZIEZVU0lPTiBTLlIuTC4iLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiIyMzJmN2RmYy0wYzM2LTRjMjMtYWVhNy0yNzE0MTUzNzJjZGUiLCJnaXZlbl9uYW1lIjoiQ1JJU1RJQU4gTFVQQVNDVSIsImF1dGhvcklkIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlIiwiZmFtaWx5X25hbWUiOiJCSU5BUlkgRlVTSU9OIFMuUi5MLiIsImVtYWlsIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlQGluc3BlY3RpYW11bmNpaS5ybyJ9.izusVnj699j_WHJug3ZGeDEWgMb4Qk9qTSW0p_gxytJOu_dnzwzgop2O8cHXcXOZ8pZMPsgRQtgdO68zet2JDwq2_p1sLiTXiWjaBskIlxQy2RYrCGg8tuPBAQFnC0Im_srSlCm4AYhW3L0rRCPmbWxoNHaOuS-Cq_dsheVYM1NTIRPBO_KzbHjFzm01cYMKN-3iV_ONMRnCvGAS1cmDmYZ-0OQycJ9iYYp--DR_D2ls-9mkhkfR8Er_3TPCtF5_xkhvjENlH5FT2Vre7Mu5FzxwNWpkxnk7DqK049UER6kPY3CDoBQFLjn-35KHc5wsux7pAMPjDZy18hgV2YTR3Q`
+const myAuthToken = `eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0QWZKOTk2XzhaZkUzVVczSHpBcGgzbjRaREVLcDdyaWE0SlVHLWNoN2FnIn0.eyJleHAiOjE3NTc0MjQxODcsImlhdCI6MTc1NzQyMjM4NywianRpIjoiOGQ4MzFlMjktMTAyNi00ZjU4LWFjYTgtMjM0YzdmMDM5N2YyIiwiaXNzIjoiaHR0cHM6Ly9zc28uZGV2Lmluc3BlY3RpYW11bmNpaS5vcmcvcmVhbG1zL0FQSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIxOGJlNTE1Yi1hNjdmLTQ2NjAtYjZlYS1mNjM0OWJjMThiMjciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZWdlcy1hcGkiLCJzaWQiOiJlNjE3NGJjNy04M2Q2LTRlMGEtYjE1OC0wNGNkOWNiNTNkZjciLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYXBpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNSSVNUSUFOIExVUEFTQ1UgQklOQVJZIEZVU0lPTiBTLlIuTC4iLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiIyMzJmN2RmYy0wYzM2LTRjMjMtYWVhNy0yNzE0MTUzNzJjZGUiLCJnaXZlbl9uYW1lIjoiQ1JJU1RJQU4gTFVQQVNDVSIsImF1dGhvcklkIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlIiwiZmFtaWx5X25hbWUiOiJCSU5BUlkgRlVTSU9OIFMuUi5MLiIsImVtYWlsIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlQGluc3BlY3RpYW11bmNpaS5ybyJ9.TTwVPJoZXme0Pxp-BO_L8ZZ73qq8XuBGURqy3X8bphhRx4b-svHu03xOISkpQViTEZye4TWZyvLRK2uwyfN9Kxj_9F2Vc9lm9NGFqIF_giqTnNqGFWvST9kpdjq20JfCpOp-XxXUOfP137Hk20xRBalgpxoTHmsEn3s1YKiofiyTf8anmqPA64qXSV2uuKbpsDWimWDlIscK0mSpSeHBOIEHuJUsHdWjS1jTXuxJSHURoeAI4JDxOqVXRIKOlvEbjN4GWYMVuGA3cH1oYze9oM6IUHoh-BLysv5DgpEAzg-_hh44BdSrvO0RVH0TTyDs6Z2_H_91k5P_-dzy47OGKQ`
 document.getElementById('result-auth').textContent = myAuthToken;
 document.getElementById('profileForm').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -71,6 +71,47 @@ document.getElementById('profileForm').addEventListener('submit', async (e) => {
     }
 });
 
+// NOMENCLATOR
+document.getElementById('nomenclatorForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const authToken = document.getElementById('result-auth').textContent;
+    const tip = document.getElementById('nomenclator-field').value;
+    const resultDiv = document.getElementById('result-nomenclator');
+
+    try {
+        const response = await fetch('api/nomenclator.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ authToken, tip })
+        });
+        
+        const dataJson = await response.clone().json();
+        const dataText = await response.text();
+
+        
+        if (!dataJson) {
+            resultDiv.innerHTML = `Server errr: ${dataText}`;
+        } 
+        else {
+            const responseJson = dataJson.response;
+            var text = '';
+
+            JSON.parse(responseJson).forEach(item => {
+                text += item.nume + ' codSiruta=' + item.codSiruta + '</br>';
+            });
+
+
+            resultDiv.innerHTML = text;
+        }
+        
+    } catch (error) {
+        resultDiv.innerHTML = `Error: ${error.message}`;
+    }
+});
+
 // ADAUGARE CONTRACT
 document.getElementById('adaugareContractForm').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -81,7 +122,7 @@ document.getElementById('adaugareContractForm').addEventListener('submit', async
     const resultDiv = document.getElementById('result-adaugare-contract');
     
     try {
-        const response = await fetch('api/adaugare-contract.php', {
+        const response = await fetch('api/adaugare-contract-2.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
