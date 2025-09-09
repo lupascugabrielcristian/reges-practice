@@ -49,6 +49,7 @@ $body = [
         'tipNorma' => 'NormaIntreaga', // Tip norma (pagina 3)
         'tipLocMunca' => 'Fix', // Loc de munca (pagina 3)
         'judetLocMunca' =>  'AG', // Judet loc de munca (pagina 3). Aparent localitatea nu se da din api :))
+        // 'stareCurenta' => [],
         'timpMunca' =>  [
             'norma' => 'NormaIntreaga840', // Durata timp munca (pagina 2)
             'durata' =>  8, // Numar ore (pagina 2)
@@ -59,9 +60,8 @@ $body = [
             'sfarsitInterval' => '2024-01-01T18:30:00.000', // Pana la ora (pagina 2)
         ],
         'numarContract' => '9023', // Numar contract (pagina 3)
-        'dataInceputContract' => '2024-10-30T14:19:58.917Z', // Data inceput (pagina 3)
-        'dataContract' => '2024-10-30T14:19:58.917Z', 
-
+        'dataInceputContract' => '2025-10-30T14:19:58.917Z', // Data inceput (pagina 3)
+        'dataContract' => '2025-10-30T14:19:58.917Z', 
         'detaliiL153' => [
             // "clasificareSuplimentaraL153": "XX", 
             'functieL153' => '11.001XX001.01.1', // Functie/ocupatie (pagina 3)
@@ -78,7 +78,7 @@ $body = [
         'nivelStudii' => 'MG', // Nivel studii post (pagina 3)
     ],
 ];
-$jsonData = json_encode($body);
+$jsonData = json_encode($body, false);
 
 // suprascriu cu ce vine din request
 $field1 = $data['field1'] ?? '';
@@ -119,7 +119,7 @@ else if ($response == '')
 }
 else {
     echo json_encode([
-        'status' => 2000,
+        'status' => curl_getinfo($ch, CURLINFO_HTTP_CODE),
         'response' => $response,
         'error' => ''
     ], true);

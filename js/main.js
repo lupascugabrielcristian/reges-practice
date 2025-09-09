@@ -96,15 +96,21 @@ document.getElementById('nomenclatorForm').addEventListener('submit', async (e) 
             resultDiv.innerHTML = `Server errr: ${dataText}`;
         } 
         else {
-            const responseJson = dataJson.response;
-            var text = '';
 
-            JSON.parse(responseJson).forEach(item => {
-                text += item.nume + ' codSiruta=' + item.codSiruta + '</br>';
-            });
+            try {
+                const responseJson = dataJson.response;
+                var text = '';
+
+                JSON.parse(responseJson).forEach(item => {
+                    text += item.nume + ' codSiruta=' + item.codSiruta + '</br>';
+                });
 
 
-            resultDiv.innerHTML = text;
+                resultDiv.innerHTML = text;
+            }
+            catch (err_parse) {
+                resultDiv.innerHTML = JSON.stringify(dataJson);
+            }
         }
         
     } catch (error) {
@@ -140,7 +146,10 @@ document.getElementById('adaugareContractForm').addEventListener('submit', async
                 if (dataJson.status == 200) {
                     resultDiv.innerHTML = JSON.stringify(dataJson.response)
                 } else if (dataJson.status == 2000) {
-                    resultDiv.innerHTML = 'CERERE TRIMISA <\br>'+ dataJson.response;
+                    resultDiv.innerHTML = 'CERERE TRIMISA </br>'+ dataJson.response;
+                }
+                else if (dataJson.status == 400) {
+                    resultDiv.innerHTML = 'BAD REQUEST </br>'+ dataJson.response;
                 }
                 else if (dataJson.status == 401) {
                     resultDiv.innerHTML = '401 - Tokenul a exirat';
