@@ -36,7 +36,7 @@ document.getElementById('authenticateForm').addEventListener('submit', async (e)
 });
 
 // PROFILE
-const myAuthToken = `eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0QWZKOTk2XzhaZkUzVVczSHpBcGgzbjRaREVLcDdyaWE0SlVHLWNoN2FnIn0.eyJleHAiOjE3NTczNDkxMzIsImlhdCI6MTc1NzM0NzMzMiwianRpIjoiMzIwMjQyMjItMDMwOS00MDRkLWE5YzktNTYzNjQ1YzE1ZWIxIiwiaXNzIjoiaHR0cHM6Ly9zc28uZGV2Lmluc3BlY3RpYW11bmNpaS5vcmcvcmVhbG1zL0FQSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIxOGJlNTE1Yi1hNjdmLTQ2NjAtYjZlYS1mNjM0OWJjMThiMjciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZWdlcy1hcGkiLCJzaWQiOiJjMjllNWJjNS1hNWQxLTQzOWQtYWI3My0wZGFjZmI2MzU5ZjAiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYXBpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNSSVNUSUFOIExVUEFTQ1UgQklOQVJZIEZVU0lPTiBTLlIuTC4iLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiIyMzJmN2RmYy0wYzM2LTRjMjMtYWVhNy0yNzE0MTUzNzJjZGUiLCJnaXZlbl9uYW1lIjoiQ1JJU1RJQU4gTFVQQVNDVSIsImF1dGhvcklkIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlIiwiZmFtaWx5X25hbWUiOiJCSU5BUlkgRlVTSU9OIFMuUi5MLiIsImVtYWlsIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlQGluc3BlY3RpYW11bmNpaS5ybyJ9.N5pIP3TVCNZC9FYJY6P6eHXQtPfJeYBShkBKVXa3xFauSUGNwDiRG5lIAcwmtyqqhu9s1do0CuB_bOWjjVf1F8YWwx_5o_XYE-uG4C0n2a3L0B7au_FECfD6efRr2Wec-jeJC3a0m_fQjZoGbdLlCAy9-4dC95g8Ivzu5Ax2fEx8ahqRjLW-zHz-Tq0RR3kAZbCFPaIwUkeolvxNY3tlYBNkbcUR8f4FTW4UnirDcC4VHWiCEPw0TCixcEAInOkqGBjI5YGRv1XKE7zYaAdW3u82jWUHbrPRu2QI208osAnFiqe6R9hLSNKfZRN6xjVvV4EhBgYCDz2Rm4nr3o6AEg`
+const myAuthToken = `eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0QWZKOTk2XzhaZkUzVVczSHpBcGgzbjRaREVLcDdyaWE0SlVHLWNoN2FnIn0.eyJleHAiOjE3NTc0MTUxMTgsImlhdCI6MTc1NzQxMzMxOCwianRpIjoiODBjMWFmODktYjMwYS00M2MwLWI2YTctNzk4NTg1OTdmYjY0IiwiaXNzIjoiaHR0cHM6Ly9zc28uZGV2Lmluc3BlY3RpYW11bmNpaS5vcmcvcmVhbG1zL0FQSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIxOGJlNTE1Yi1hNjdmLTQ2NjAtYjZlYS1mNjM0OWJjMThiMjciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZWdlcy1hcGkiLCJzaWQiOiJmNzk2YTE1Yy05MmI1LTQ0ZjAtODJmMy04MjUzNjBlMDViNmMiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYXBpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNSSVNUSUFOIExVUEFTQ1UgQklOQVJZIEZVU0lPTiBTLlIuTC4iLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiIyMzJmN2RmYy0wYzM2LTRjMjMtYWVhNy0yNzE0MTUzNzJjZGUiLCJnaXZlbl9uYW1lIjoiQ1JJU1RJQU4gTFVQQVNDVSIsImF1dGhvcklkIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlIiwiZmFtaWx5X25hbWUiOiJCSU5BUlkgRlVTSU9OIFMuUi5MLiIsImVtYWlsIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlQGluc3BlY3RpYW11bmNpaS5ybyJ9.izusVnj699j_WHJug3ZGeDEWgMb4Qk9qTSW0p_gxytJOu_dnzwzgop2O8cHXcXOZ8pZMPsgRQtgdO68zet2JDwq2_p1sLiTXiWjaBskIlxQy2RYrCGg8tuPBAQFnC0Im_srSlCm4AYhW3L0rRCPmbWxoNHaOuS-Cq_dsheVYM1NTIRPBO_KzbHjFzm01cYMKN-3iV_ONMRnCvGAS1cmDmYZ-0OQycJ9iYYp--DR_D2ls-9mkhkfR8Er_3TPCtF5_xkhvjENlH5FT2Vre7Mu5FzxwNWpkxnk7DqK049UER6kPY3CDoBQFLjn-35KHc5wsux7pAMPjDZy18hgV2YTR3Q`
 document.getElementById('result-auth').textContent = myAuthToken;
 document.getElementById('profileForm').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -123,6 +123,12 @@ document.getElementById('readMessageForm').addEventListener('submit', async (e) 
     
     const authToken = document.getElementById('result-auth').textContent;
     const resultDiv = document.getElementById('result-read-message');
+
+    // Sterg continutul de la raspunsul mesajului de "Commit Read"
+    document.getElementById('result-commit-read').innerHTML = '';
+
+    // Ceva sa arat ca se incarca
+    resultDiv.innerHTML = 'Se face apelul...';
     
     try {
         const response = await fetch('api/read-message.php', {
@@ -140,7 +146,10 @@ document.getElementById('readMessageForm').addEventListener('submit', async (e) 
                 resultDiv.innerHTML = `Server errr: ${dataJson }`;
             } 
             else {
-                if (dataJson.status == 200) {
+                if (dataJson.status == 204) {
+                    resultDiv.innerHTML = 'Nu mai sunt mesaje necitite';
+                }
+                else if (dataJson.status == 200) {
                     const responseJson = JSON.parse(dataJson['response'])
                     console.log(responseJson);
                     var text = responseJson.result.code + '</br>';
@@ -149,6 +158,53 @@ document.getElementById('readMessageForm').addEventListener('submit', async (e) 
                     text += responseJson.result.description + '</br>';
 
                     resultDiv.innerHTML = text;
+                } else if (dataJson.status == 2000) {
+                    resultDiv.innerHTML = 'CERERE TRIMISA <\br>'+ dataJson.response;
+                }
+                else if (dataJson.status == 401) {
+                    resultDiv.innerHTML = '401 - Tokenul a exirat';
+                }
+                else {
+                    // Rezultatul are date
+                    resultDiv.innerHTML = JSON.stringify(dataJson);
+                }
+            }
+        } catch (err_p) {
+            debugger;
+            resultDiv.innerHTML = await response.text();
+        }
+
+    } catch (error) {
+        resultDiv.innerHTML = `Error: ${error.message}`;
+    }
+});
+
+// COMMIT READ
+document.getElementById('commitReadForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const authToken = document.getElementById('result-auth').textContent;
+    const resultDiv = document.getElementById('result-commit-read');
+    
+    try {
+        const response = await fetch('api/commit-read.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ authToken })
+        });
+        
+        try {
+            let dataJson = await response.clone().json();
+
+            if (!dataJson ) {
+                resultDiv.innerHTML = `Server errr: ${dataJson }`;
+            } 
+            else {
+                if (dataJson.status == 200) {
+                    // La apelul asta nu primesc nici un raspuns in continut
+                    resultDiv.innerHTML = 'OK';
                 } else if (dataJson.status == 2000) {
                     resultDiv.innerHTML = 'CERERE TRIMISA <\br>'+ dataJson.response;
                 }

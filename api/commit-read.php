@@ -6,13 +6,14 @@ header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST');
 header('Access-Control-Allow-Headers: Content-Type');
 
-// api/Status/ReadMessage
-$url = 'https://api.test.inspectiamuncii.org/api/Status/ReadMessage';
+// api/Status/CommitRead
+$url = 'https://api.test.inspectiamuncii.org/api/Status/CommitRead';
 
 
 $json = file_get_contents('php://input');
 $data = json_decode($json, true);
 $authToken = $data['authToken'] ?? '';
+// error_log(sprintf("Auth token received: %s \n" . $authToken,  date('Y-m-d H:i')));
 $headers = [
     'Authorization: Bearer ' . $authToken,
     'Accept: */*',
@@ -32,6 +33,7 @@ $response = curl_exec($ch);
  // = RASPUNS ===========================================
 
 $status_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+error_log($response);
 echo json_encode([
     'status' => $status_code, 
     'response' => $response,
