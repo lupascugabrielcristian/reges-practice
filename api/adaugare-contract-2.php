@@ -14,7 +14,7 @@ $url = 'https://api.test.inspectiamuncii.org/api/Contract';
 $json = file_get_contents('php://input');
 $data = json_decode($json, true);
 $authToken = $data['authToken'] ?? '';
-error_log(sprintf("Auth token received: %s \n" . $authToken,  date('Y-m-d H:i')));
+// error_log(sprintf("Auth token received: %s \n" . $authToken,  date('Y-m-d H:i')));
 $headers = [
     'Authorization: Bearer ' . $authToken,
     'Accept: */*',
@@ -49,7 +49,7 @@ $body = [
         'tipNorma' => 'NormaIntreaga', // Tip norma (pagina 3)
         'tipLocMunca' => 'Fix', // Loc de munca (pagina 3)
         'judetLocMunca' =>  'AG', // Judet loc de munca (pagina 3). Aparent localitatea nu se da din api :))
-        // 'stareCurenta' => [],
+        'stareCurenta' => [],   // Trimite o eroare de la server daca nu este adaugat
         'timpMunca' =>  [
             'norma' => 'NormaIntreaga840', // Durata timp munca (pagina 2)
             'durata' =>  8, // Numar ore (pagina 2)
@@ -78,7 +78,8 @@ $body = [
         'nivelStudii' => 'MG', // Nivel studii post (pagina 3)
     ],
 ];
-$jsonData = json_encode($body, false);
+$jsonData = json_encode($body, JSON_FORCE_OBJECT); // Parametrul JSON_FORCE_OBJECT, pentru a transforma stareCurenta in {} in loc de []
+error_log($jsonData);
 
 // suprascriu cu ce vine din request
 $field1 = $data['field1'] ?? '';
