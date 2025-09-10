@@ -36,7 +36,7 @@ document.getElementById('authenticateForm').addEventListener('submit', async (e)
 });
 
 // PROFILE
-const myAuthToken = `eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0QWZKOTk2XzhaZkUzVVczSHpBcGgzbjRaREVLcDdyaWE0SlVHLWNoN2FnIn0.eyJleHAiOjE3NTc1MDMyMDUsImlhdCI6MTc1NzUwMTQwNSwianRpIjoiZGRhOWE5N2MtOTRiYy00NmI5LThhNmEtMWZkNWIxOTdiNWFkIiwiaXNzIjoiaHR0cHM6Ly9zc28uZGV2Lmluc3BlY3RpYW11bmNpaS5vcmcvcmVhbG1zL0FQSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIxOGJlNTE1Yi1hNjdmLTQ2NjAtYjZlYS1mNjM0OWJjMThiMjciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZWdlcy1hcGkiLCJzaWQiOiIzNzk2ZjIyNy0yZmI5LTQ5MjMtOTk1Ni1iZWZmODM5NjY3ZjMiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYXBpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNSSVNUSUFOIExVUEFTQ1UgQklOQVJZIEZVU0lPTiBTLlIuTC4iLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiIyMzJmN2RmYy0wYzM2LTRjMjMtYWVhNy0yNzE0MTUzNzJjZGUiLCJnaXZlbl9uYW1lIjoiQ1JJU1RJQU4gTFVQQVNDVSIsImF1dGhvcklkIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlIiwiZmFtaWx5X25hbWUiOiJCSU5BUlkgRlVTSU9OIFMuUi5MLiIsImVtYWlsIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlQGluc3BlY3RpYW11bmNpaS5ybyJ9.ggADLOiOjClUMuY6X95VJ5GstxJpz4Ph3msymtJJvZ7BiK5pT8l5CJcwH3Eu7eMHzRa6pnWUq_ho4_vSwctrSEUO40JiFQxZUUXRUutwPxCtlARd1d0ICN2kFfDtli-ayqXL6sD55A-b5sUZ9NuKpZ0vJW5BDwppvoTvok6RNlaiuHc36q9VX0NvTOHLDIyEUeVmNbWlAeqtA-kt2eFVpbeYZDCy8UKj3zx2VOra33A0Ekblqtr2LenuFJIJpbbmGWkM3KurMPMafvJMf6P09vtoFsHNe1_qgeXfXlGX1zm1DAukxsBxtjkodV5ki-1XqDLcoaCWhEAGE3nC_aYM5g`
+const myAuthToken = `eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0QWZKOTk2XzhaZkUzVVczSHpBcGgzbjRaREVLcDdyaWE0SlVHLWNoN2FnIn0.eyJleHAiOjE3NTc1MTQyMzYsImlhdCI6MTc1NzUxMjQzNiwianRpIjoiNTFmYWUxNDMtYjEzNC00ZDZiLWJlZGItNDBjYTcwNzRlZTUxIiwiaXNzIjoiaHR0cHM6Ly9zc28uZGV2Lmluc3BlY3RpYW11bmNpaS5vcmcvcmVhbG1zL0FQSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIxOGJlNTE1Yi1hNjdmLTQ2NjAtYjZlYS1mNjM0OWJjMThiMjciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZWdlcy1hcGkiLCJzaWQiOiJiMDgwZTNjMy01ZWJhLTRkNWUtOTNiMS01M2NkOGU3MmJkMDEiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYXBpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNSSVNUSUFOIExVUEFTQ1UgQklOQVJZIEZVU0lPTiBTLlIuTC4iLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiIyMzJmN2RmYy0wYzM2LTRjMjMtYWVhNy0yNzE0MTUzNzJjZGUiLCJnaXZlbl9uYW1lIjoiQ1JJU1RJQU4gTFVQQVNDVSIsImF1dGhvcklkIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlIiwiZmFtaWx5X25hbWUiOiJCSU5BUlkgRlVTSU9OIFMuUi5MLiIsImVtYWlsIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlQGluc3BlY3RpYW11bmNpaS5ybyJ9.lpuBIiYV6z0xSeqUmUOMENjazYhQlV4WWbkNxpMU6uMAg1cB8p9wrSvioLQvSzvqUb6_9F3LRKJN9WbGSL18OAy_afeviLwG5KIaw_QEzrh6oQMrzI7YPOU0f88qEXdlbGYEc4OpXVnyY_WOFIlACMOQUlM-TZmRpXCS0lPHmA7IU3Ne8WcTqoJcQqVYRVX5AfQvJ_dmYiMwBxf9Sg-rU6Fycf10hiG_Zrr3whMz2cV9BDwd0DECNUfupRMuzYKirVMvHgqtz-THZUOyKylCkgsz1Gd34i61uQx7885Vec1Bz8croU18n2ivuoOmzDKtwP2FUbuNdRpF0xxlmUWJVg`
 document.getElementById('result-auth').textContent = myAuthToken;
 document.getElementById('profileForm').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -294,6 +294,54 @@ document.getElementById('adaugareSalariatForm').addEventListener('submit', async
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({ authToken, field3, field4 })
+        });
+        
+        try {
+            let dataJson = await response.clone().json();
+
+            if (!dataJson ) {
+                resultDiv.innerHTML = `Server errr: ${dataJson }`;
+            } 
+            else {
+                if (dataJson.status == 200) {
+                    // La apelul asta nu primesc nici un raspuns in continut
+                    resultDiv.innerHTML = 'OK';
+                } else if (dataJson.status == 2000) {
+                    resultDiv.innerHTML = 'CERERE TRIMISA <\br>'+ dataJson.response;
+                }
+                else if (dataJson.status == 401) {
+                    resultDiv.innerHTML = '401 - Tokenul a exirat';
+                }
+                else {
+                    // Rezultatul are date
+                    resultDiv.innerHTML = JSON.stringify(dataJson);
+                }
+            }
+        } catch (err_p) {
+            resultDiv.innerHTML = await response.text();
+        }
+
+    } catch (error) {
+        resultDiv.innerHTML = `Error: ${error.message}`;
+    }
+});
+
+// MODIFICARE SALARIAT
+document.getElementById('modificareSalariatForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const authToken = document.getElementById('result-auth').textContent;
+    const resultDiv = document.getElementById('result-modificare-salariat');
+    const field5 = document.getElementById('field5').value;
+    const field6 = document.getElementById('field6').value;
+    
+    try {
+        const response = await fetch('api/modificare-salariat.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ authToken, field5, field6 })
         });
         
         try {
