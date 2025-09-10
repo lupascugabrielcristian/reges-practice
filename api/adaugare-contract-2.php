@@ -21,6 +21,9 @@ $headers = [
     'Content-Type: application/json',
 ];
 
+$numarContract = $data['field1'] ?? '';
+$field2 = $data['field2'] ?? '';
+
 // JSON body
 $body = [
     '$type' => 'contract',
@@ -49,6 +52,10 @@ $body = [
         'tipNorma' => 'NormaIntreaga', // Tip norma (pagina 3)
         'tipLocMunca' => 'Fix', // Loc de munca (pagina 3)
         'judetLocMunca' =>  'AG', // Judet loc de munca (pagina 3). Aparent localitatea nu se da din api :))
+        'localitateLocMunca' => [
+            'codSiruta' => 1721,
+            'judetLocMunca' =>  'AG' // Fara asta nu merge, dar nici nu il in considerare pentru "Judet loc de munca" ci foloseste judetul localitatii cu codul dat
+        ], // Loc de munca (pagina 3) Nomenclator: Localitate
         'stareCurenta' => [],   // Trimite o eroare de la server daca nu este adaugat
         'timpMunca' =>  [
             'norma' => 'NormaIntreaga840', // Durata timp munca (pagina 2)
@@ -59,7 +66,7 @@ $body = [
             'inceputInterval' => '2024-01-01T10:30:00.000', // De la ora (pagina 2)
             'sfarsitInterval' => '2024-01-01T18:30:00.000', // Pana la ora (pagina 2)
         ],
-        'numarContract' => '9023', // Numar contract (pagina 3)
+        'numarContract' => $numarContract, // Numar contract (pagina 3)
         'dataInceputContract' => '2025-10-30T14:19:58.917Z', // Data inceput (pagina 3)
         'dataContract' => '2025-10-30T14:19:58.917Z', 
         'detaliiL153' => [
@@ -79,7 +86,6 @@ $body = [
     ],
 ];
 $jsonData = json_encode($body, JSON_FORCE_OBJECT); // Parametrul JSON_FORCE_OBJECT, pentru a transforma stareCurenta in {} in loc de []
-error_log($jsonData);
 
 // suprascriu cu ce vine din request
 $field1 = $data['field1'] ?? '';

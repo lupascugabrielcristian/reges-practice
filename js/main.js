@@ -36,7 +36,7 @@ document.getElementById('authenticateForm').addEventListener('submit', async (e)
 });
 
 // PROFILE
-const myAuthToken = `eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0QWZKOTk2XzhaZkUzVVczSHpBcGgzbjRaREVLcDdyaWE0SlVHLWNoN2FnIn0.eyJleHAiOjE3NTc0OTU1MzgsImlhdCI6MTc1NzQ5MzczOCwianRpIjoiYjFjMTIyZWItYzIxYy00ZGJkLThiZGEtNTM4NDcyMTUxZTM4IiwiaXNzIjoiaHR0cHM6Ly9zc28uZGV2Lmluc3BlY3RpYW11bmNpaS5vcmcvcmVhbG1zL0FQSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIxOGJlNTE1Yi1hNjdmLTQ2NjAtYjZlYS1mNjM0OWJjMThiMjciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZWdlcy1hcGkiLCJzaWQiOiJjZmFlYTRkNi00NWMzLTRhOTMtYjU0MS0wZjdjZmI5ZmI3MjkiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYXBpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNSSVNUSUFOIExVUEFTQ1UgQklOQVJZIEZVU0lPTiBTLlIuTC4iLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiIyMzJmN2RmYy0wYzM2LTRjMjMtYWVhNy0yNzE0MTUzNzJjZGUiLCJnaXZlbl9uYW1lIjoiQ1JJU1RJQU4gTFVQQVNDVSIsImF1dGhvcklkIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlIiwiZmFtaWx5X25hbWUiOiJCSU5BUlkgRlVTSU9OIFMuUi5MLiIsImVtYWlsIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlQGluc3BlY3RpYW11bmNpaS5ybyJ9.XJnpEcTdN2HP-_tpED6cxiQrzT1zYdeKkjU5o-BHj5A66UGPT1ZkzWsHZyKklh68Dw9OJ9fX_HSD-ZjfhC4-GOERocRsCgYwdKDJkYDEIH1-AqbBMR2bW6vaKrUt82mbAsZyLoHPK17C9V0BMo6DpcSUC-tCo9DZMpebGXnsep2eubXpDex1YNnxkqj2ajBfCWc97kZ-C8sY4nS3m2PbTg2d5QhFZ8pPrAGmoTPhGZKlG7TlX1ISoiZxFwbsbo2L8IQmIDd2NEVyOZQpvFnKfmkvkglHkQ7Yj6cERMLYjxPPuKOnm4fY9_dv-nL26nfcmEqAQ2QicnI7RNWGn7vb4w`
+const myAuthToken = `eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0QWZKOTk2XzhaZkUzVVczSHpBcGgzbjRaREVLcDdyaWE0SlVHLWNoN2FnIn0.eyJleHAiOjE3NTc1MDMyMDUsImlhdCI6MTc1NzUwMTQwNSwianRpIjoiZGRhOWE5N2MtOTRiYy00NmI5LThhNmEtMWZkNWIxOTdiNWFkIiwiaXNzIjoiaHR0cHM6Ly9zc28uZGV2Lmluc3BlY3RpYW11bmNpaS5vcmcvcmVhbG1zL0FQSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIxOGJlNTE1Yi1hNjdmLTQ2NjAtYjZlYS1mNjM0OWJjMThiMjciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZWdlcy1hcGkiLCJzaWQiOiIzNzk2ZjIyNy0yZmI5LTQ5MjMtOTk1Ni1iZWZmODM5NjY3ZjMiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYXBpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNSSVNUSUFOIExVUEFTQ1UgQklOQVJZIEZVU0lPTiBTLlIuTC4iLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiIyMzJmN2RmYy0wYzM2LTRjMjMtYWVhNy0yNzE0MTUzNzJjZGUiLCJnaXZlbl9uYW1lIjoiQ1JJU1RJQU4gTFVQQVNDVSIsImF1dGhvcklkIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlIiwiZmFtaWx5X25hbWUiOiJCSU5BUlkgRlVTSU9OIFMuUi5MLiIsImVtYWlsIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlQGluc3BlY3RpYW11bmNpaS5ybyJ9.ggADLOiOjClUMuY6X95VJ5GstxJpz4Ph3msymtJJvZ7BiK5pT8l5CJcwH3Eu7eMHzRa6pnWUq_ho4_vSwctrSEUO40JiFQxZUUXRUutwPxCtlARd1d0ICN2kFfDtli-ayqXL6sD55A-b5sUZ9NuKpZ0vJW5BDwppvoTvok6RNlaiuHc36q9VX0NvTOHLDIyEUeVmNbWlAeqtA-kt2eFVpbeYZDCy8UKj3zx2VOra33A0Ekblqtr2LenuFJIJpbbmGWkM3KurMPMafvJMf6P09vtoFsHNe1_qgeXfXlGX1zm1DAukxsBxtjkodV5ki-1XqDLcoaCWhEAGE3nC_aYM5g`
 document.getElementById('result-auth').textContent = myAuthToken;
 document.getElementById('profileForm').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -62,8 +62,11 @@ document.getElementById('profileForm').addEventListener('submit', async (e) => {
             resultDiv.innerHTML = `Server errr: ${dataText}`;
         } 
         else {
-            // resultDiv.innerHTML =JSON.stringify(JSON.parse(dataJson));
-            resultDiv.innerHTML = JSON.stringify(dataJson);
+            if (dataJson.status == 401) {
+                resultDiv.innerHTML = '401 - Tokenul a exirat';
+            } else {
+                resultDiv.innerHTML = JSON.stringify(dataJson);
+            }
         }
         
     } catch (error) {
@@ -267,7 +270,54 @@ document.getElementById('commitReadForm').addEventListener('submit', async (e) =
                 }
             }
         } catch (err_p) {
-            debugger;
+            resultDiv.innerHTML = await response.text();
+        }
+
+    } catch (error) {
+        resultDiv.innerHTML = `Error: ${error.message}`;
+    }
+});
+
+// ADAUGARE SALARIAT
+document.getElementById('adaugareSalariatForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const authToken = document.getElementById('result-auth').textContent;
+    const resultDiv = document.getElementById('result-adaugare-salariat');
+    const field3 = document.getElementById('field3').value;
+    const field4 = document.getElementById('field4').value;
+    
+    try {
+        const response = await fetch('api/adaugare-salariat.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ authToken, field3, field4 })
+        });
+        
+        try {
+            let dataJson = await response.clone().json();
+
+            if (!dataJson ) {
+                resultDiv.innerHTML = `Server errr: ${dataJson }`;
+            } 
+            else {
+                if (dataJson.status == 200) {
+                    // La apelul asta nu primesc nici un raspuns in continut
+                    resultDiv.innerHTML = 'OK';
+                } else if (dataJson.status == 2000) {
+                    resultDiv.innerHTML = 'CERERE TRIMISA <\br>'+ dataJson.response;
+                }
+                else if (dataJson.status == 401) {
+                    resultDiv.innerHTML = '401 - Tokenul a exirat';
+                }
+                else {
+                    // Rezultatul are date
+                    resultDiv.innerHTML = JSON.stringify(dataJson);
+                }
+            }
+        } catch (err_p) {
             resultDiv.innerHTML = await response.text();
         }
 
