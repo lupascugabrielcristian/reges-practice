@@ -70,16 +70,7 @@ $body = [
         'dataInceputContract' => '2025-10-30T14:19:58.917Z', // Data inceput (pagina 3)
         'dataContract' => '2025-10-30T14:19:58.917Z', 
         'detaliiL153' => [
-            // "clasificareSuplimentaraL153": "XX", 
             'functieL153' => '11.001XX001.01.1', // Functie/ocupatie (pagina 3)
-            // "specialitateFunctieL153": "1",
-            // "structuraAprobataL153": "2",
-            // "specialitateStructuraAprobataL153" : "3",
-            // "gradProfesionalL153": "4",
-            // "gradatieL153": "5",
-            // "denumireAltaFunctieL153":"Alta functie",
-            // "explicatieFunctieL153": "Nu este in nomenclator",
-            // "altGradProfesionalL153": "Alt grad profesional"
         ],
         'salariu' => 4800, // Salariu brut lunar (pagina 4)
         'nivelStudii' => 'MG', // Nivel studii post (pagina 3)
