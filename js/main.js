@@ -36,7 +36,7 @@ document.getElementById('authenticateForm').addEventListener('submit', async (e)
 });
 
 // PROFILE
-const myAuthToken = `eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0QWZKOTk2XzhaZkUzVVczSHpBcGgzbjRaREVLcDdyaWE0SlVHLWNoN2FnIn0.eyJleHAiOjE3NTc1OTQyMjMsImlhdCI6MTc1NzU5MjQyMywianRpIjoiZDVhYmRhYTMtYjM0Ni00MGFkLThjYjgtMmYwYTU1N2YwZWU4IiwiaXNzIjoiaHR0cHM6Ly9zc28uZGV2Lmluc3BlY3RpYW11bmNpaS5vcmcvcmVhbG1zL0FQSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIxOGJlNTE1Yi1hNjdmLTQ2NjAtYjZlYS1mNjM0OWJjMThiMjciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZWdlcy1hcGkiLCJzaWQiOiI3M2E0OGNlZS1kNTNkLTQ3MDUtYmI0My1kYjg1NGQ3MDgyYzYiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYXBpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNSSVNUSUFOIExVUEFTQ1UgQklOQVJZIEZVU0lPTiBTLlIuTC4iLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiIyMzJmN2RmYy0wYzM2LTRjMjMtYWVhNy0yNzE0MTUzNzJjZGUiLCJnaXZlbl9uYW1lIjoiQ1JJU1RJQU4gTFVQQVNDVSIsImF1dGhvcklkIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlIiwiZmFtaWx5X25hbWUiOiJCSU5BUlkgRlVTSU9OIFMuUi5MLiIsImVtYWlsIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlQGluc3BlY3RpYW11bmNpaS5ybyJ9.ONrrmoqNiNyPLxONJNF_lYPprfQGvqxbjGDq1WTVh6K19ybfql20vtUcoXjxN0Deyo6Hl2Td4T7v59HJVjGmHVXZm8QaR1qWRKnG3yUMBzrFhtt7i00FC0n_l4sy28kClRtOCPhIgAyMHmj2TOQ0zpKBSfMYiVvIj3Bj-ZTbCFQfcqzLP2FD4CTzUxOaDFORYzbokn6KYZ6Y78_ipWfWuvgeDPBNVk-st3eVfnxOwQ1MzpiQDnsRkUOZbg-1YOSanDsM21SZ0KjWS_0LPO9euaiN4ffDx6Y3ftPHd6f5KYIxfIHNzJaVoN-rrzNVO-TWKenMo_mPEO65u-R7qiC7DA`
+const myAuthToken = `eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0QWZKOTk2XzhaZkUzVVczSHpBcGgzbjRaREVLcDdyaWE0SlVHLWNoN2FnIn0.eyJleHAiOjE3NTc2MDY1NzEsImlhdCI6MTc1NzYwNDc3MSwianRpIjoiMWFmNmUyZTItYjhiNS00Y2FiLWI2ZjctMGJjNzNhYmUwZmM3IiwiaXNzIjoiaHR0cHM6Ly9zc28uZGV2Lmluc3BlY3RpYW11bmNpaS5vcmcvcmVhbG1zL0FQSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIxOGJlNTE1Yi1hNjdmLTQ2NjAtYjZlYS1mNjM0OWJjMThiMjciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZWdlcy1hcGkiLCJzaWQiOiJkN2FiM2VhNy05MWNhLTQ0ODUtOWMwYy1lZDkyNDUyYTA5MzkiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYXBpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNSSVNUSUFOIExVUEFTQ1UgQklOQVJZIEZVU0lPTiBTLlIuTC4iLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiIyMzJmN2RmYy0wYzM2LTRjMjMtYWVhNy0yNzE0MTUzNzJjZGUiLCJnaXZlbl9uYW1lIjoiQ1JJU1RJQU4gTFVQQVNDVSIsImF1dGhvcklkIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlIiwiZmFtaWx5X25hbWUiOiJCSU5BUlkgRlVTSU9OIFMuUi5MLiIsImVtYWlsIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlQGluc3BlY3RpYW11bmNpaS5ybyJ9.u6jCIyJwlGiHGmGQQscudNWWEPzGXMMapJ6c5alm6k8muhnGeIy4r79WC8JHgl2O4CD8_oii8bmzc-q43H8_uDo0orURFTiamMzYU3bEtUrslPGmlgrXfbiGnH4z1oiLrFzylfqMNUQWLCKIF37U9yN554YTxNBOUMLYu5SV6kbGYk8M-hKmh19_yiuD65JQtR-2KoGq7EuTtGNKghXnUco6aAKzri5bvyegHcTfnkmV7kQN-vNdcbmg9noB3hTZY5T11sZMjTX-AA9SMFra6jqWE8cjCf87A8tKzRjALkxrnu3IeV8rxI7Xl3Pc8rPtf2MjUaSQHNGlOT_M0GUofA`
 document.getElementById('result-auth').textContent = myAuthToken;
 document.getElementById('profileForm').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -277,6 +277,54 @@ document.getElementById('modificareSuspendareForm').addEventListener('submit', a
     
     try {
         const response = await fetch('api/modificare-suspendare.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ authToken, field1 })
+        });
+        
+        try {
+            let dataJson = await response.clone().json();
+
+            if (!dataJson ) {
+                resultDiv.innerHTML = `Server errr: ${dataJson }`;
+            } 
+            else {
+                if (dataJson.status == 200) {
+                    resultDiv.innerHTML = JSON.stringify(dataJson.response)
+                } else if (dataJson.status == 2000) {
+                    resultDiv.innerHTML = 'CERERE TRIMISA </br>'+ dataJson.response;
+                }
+                else if (dataJson.status == 400) {
+                    resultDiv.innerHTML = 'BAD REQUEST </br>'+ dataJson.response;
+                }
+                else if (dataJson.status == 401) {
+                    resultDiv.innerHTML = '401 - Tokenul a exirat';
+                }
+                else {
+                    resultDiv.innerHTML = JSON.stringify(dataJson);
+                }
+            }
+        } catch (err_p) {
+            resultDiv.innerHTML = await response.text();
+        }
+
+    } catch (error) {
+        resultDiv.innerHTML = `Error: ${error.message}`;
+    }
+});
+
+// REIA ACTIVITATEA
+document.getElementById('reiaActivitateaForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const authToken = document.getElementById('result-auth').textContent;
+    const field1 = document.getElementById('field12').value;
+    const resultDiv = document.getElementById('result-reia-activitatea');
+    
+    try {
+        const response = await fetch('api/reia-activitatea.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
