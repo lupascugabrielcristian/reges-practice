@@ -39,7 +39,7 @@ $body = [
     ],
     'referintaContract' => [
         '$type' => 'referinta',
-        'id' => 'd6637f86-2c6f-4f21-8e3f-3b28befd617c' // Este necesar asta. Se obtine cu exportul din interfata web.
+        'id' => '88951c68-9a01-41c3-b457-a4d040b44aa1' // Este necesar asta. Se obtine cu exportul din interfata web. Am facut un parser in /script
     ],
     'continut' => [
         '$type' => 'continutContract',
@@ -63,14 +63,15 @@ $body = [
         'stareCurenta' => [],   // Trimite o eroare de la server daca nu este adaugat
         'timpMunca' =>  [
             'norma' => 'NormaIntreaga840', // Durata timp munca (pagina 2)
-            'durata' =>  6, // Numar ore (pagina 2)
+            'durata' =>  5, // Numar ore (pagina 2)
             'intervalTimp' => 'OrePeZi', // Tip interval repartizare (pagina 2)
             'repartizare' => 'OreDeZi', // bifa de la pagina 2
             'repartizareMunca' => 'Zilnic', // Repartizare timp munca (pagina 2)
             'inceputInterval' => '2024-01-01T10:30:00.000', // De la ora (pagina 2)
             'sfarsitInterval' => '2024-01-01T18:30:00.000', // Pana la ora (pagina 2)
         ],
-        'numarContract' => $numarContract, // Numar contract (pagina 3)
+        'numarContract' => '9025', // Numar contract (pagina 3)
+        'dataConsemnare' => '2025-11-01T14:19:58.917Z',      // Este obligatorie pentru moficare contract
         'dataInceputContract' => '2025-10-30T14:19:58.917Z', // Data inceput (pagina 3)
         'dataContract' => '2025-10-30T14:19:58.917Z', 
         'detaliiL153' => [
