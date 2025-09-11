@@ -36,7 +36,7 @@ document.getElementById('authenticateForm').addEventListener('submit', async (e)
 });
 
 // PROFILE
-const myAuthToken = `eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0QWZKOTk2XzhaZkUzVVczSHpBcGgzbjRaREVLcDdyaWE0SlVHLWNoN2FnIn0.eyJleHAiOjE3NTc1MTQyMzYsImlhdCI6MTc1NzUxMjQzNiwianRpIjoiNTFmYWUxNDMtYjEzNC00ZDZiLWJlZGItNDBjYTcwNzRlZTUxIiwiaXNzIjoiaHR0cHM6Ly9zc28uZGV2Lmluc3BlY3RpYW11bmNpaS5vcmcvcmVhbG1zL0FQSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIxOGJlNTE1Yi1hNjdmLTQ2NjAtYjZlYS1mNjM0OWJjMThiMjciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZWdlcy1hcGkiLCJzaWQiOiJiMDgwZTNjMy01ZWJhLTRkNWUtOTNiMS01M2NkOGU3MmJkMDEiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYXBpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNSSVNUSUFOIExVUEFTQ1UgQklOQVJZIEZVU0lPTiBTLlIuTC4iLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiIyMzJmN2RmYy0wYzM2LTRjMjMtYWVhNy0yNzE0MTUzNzJjZGUiLCJnaXZlbl9uYW1lIjoiQ1JJU1RJQU4gTFVQQVNDVSIsImF1dGhvcklkIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlIiwiZmFtaWx5X25hbWUiOiJCSU5BUlkgRlVTSU9OIFMuUi5MLiIsImVtYWlsIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlQGluc3BlY3RpYW11bmNpaS5ybyJ9.lpuBIiYV6z0xSeqUmUOMENjazYhQlV4WWbkNxpMU6uMAg1cB8p9wrSvioLQvSzvqUb6_9F3LRKJN9WbGSL18OAy_afeviLwG5KIaw_QEzrh6oQMrzI7YPOU0f88qEXdlbGYEc4OpXVnyY_WOFIlACMOQUlM-TZmRpXCS0lPHmA7IU3Ne8WcTqoJcQqVYRVX5AfQvJ_dmYiMwBxf9Sg-rU6Fycf10hiG_Zrr3whMz2cV9BDwd0DECNUfupRMuzYKirVMvHgqtz-THZUOyKylCkgsz1Gd34i61uQx7885Vec1Bz8croU18n2ivuoOmzDKtwP2FUbuNdRpF0xxlmUWJVg`
+const myAuthToken = `eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0QWZKOTk2XzhaZkUzVVczSHpBcGgzbjRaREVLcDdyaWE0SlVHLWNoN2FnIn0.eyJleHAiOjE3NTc1ODMwNTUsImlhdCI6MTc1NzU4MTI1NSwianRpIjoiYmQ0NmM5YTAtODBlOC00NmUxLWFlMjItYWQ1NDNlMzMxOWY1IiwiaXNzIjoiaHR0cHM6Ly9zc28uZGV2Lmluc3BlY3RpYW11bmNpaS5vcmcvcmVhbG1zL0FQSSIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiIxOGJlNTE1Yi1hNjdmLTQ2NjAtYjZlYS1mNjM0OWJjMThiMjciLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJyZWdlcy1hcGkiLCJzaWQiOiIyMmEwMmJiNy01ZTEyLTRmNWEtYWVhOS02NzRkNTViYzgzZTAiLCJhY3IiOiIxIiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbImRlZmF1bHQtcm9sZXMtYXBpIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwibmFtZSI6IkNSSVNUSUFOIExVUEFTQ1UgQklOQVJZIEZVU0lPTiBTLlIuTC4iLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiIyMzJmN2RmYy0wYzM2LTRjMjMtYWVhNy0yNzE0MTUzNzJjZGUiLCJnaXZlbl9uYW1lIjoiQ1JJU1RJQU4gTFVQQVNDVSIsImF1dGhvcklkIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlIiwiZmFtaWx5X25hbWUiOiJCSU5BUlkgRlVTSU9OIFMuUi5MLiIsImVtYWlsIjoiMjMyZjdkZmMtMGMzNi00YzIzLWFlYTctMjcxNDE1MzcyY2RlQGluc3BlY3RpYW11bmNpaS5ybyJ9.tu5bxycoygkOLjWy2CE8sjhAg1LMAci29N3kpzlitncV-t_nzw1Nfts8YKTZUnDkUfAxOjXDulGf9IB2SkQGlHfoUzvlBS9VOzZfphg-XPWwrBdoNC9DaUyJBszb48b7C28SIRGZzwzCqTTG2UVz8x11muiBBaon_SSbGxOhX8n4-nngmMqcPXqPlDSvD-IsvjTU8ziGu7bbEkJb4lzQpYMlfN6-pFAV6jNEpxUHAjuweY1iMHlc71yteNXE0c_CndlmGuDPtDFJ7zOMUxPIueIxDff-rbOIa4ac3Qps2YJ3Q1D-IrAUOk4xA1MPfhaT0G0MQVOGsCGnE1ehGO1WCA`
 document.getElementById('result-auth').textContent = myAuthToken;
 document.getElementById('profileForm').addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -132,6 +132,55 @@ document.getElementById('adaugareContractForm').addEventListener('submit', async
     
     try {
         const response = await fetch('api/adaugare-contract-2.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ authToken, field1, field2 })
+        });
+        
+        try {
+            let dataJson = await response.clone().json();
+
+            if (!dataJson ) {
+                resultDiv.innerHTML = `Server errr: ${dataJson }`;
+            } 
+            else {
+                if (dataJson.status == 200) {
+                    resultDiv.innerHTML = JSON.stringify(dataJson.response)
+                } else if (dataJson.status == 2000) {
+                    resultDiv.innerHTML = 'CERERE TRIMISA </br>'+ dataJson.response;
+                }
+                else if (dataJson.status == 400) {
+                    resultDiv.innerHTML = 'BAD REQUEST </br>'+ dataJson.response;
+                }
+                else if (dataJson.status == 401) {
+                    resultDiv.innerHTML = '401 - Tokenul a exirat';
+                }
+                else {
+                    resultDiv.innerHTML = JSON.stringify(dataJson);
+                }
+            }
+        } catch (err_p) {
+            resultDiv.innerHTML = await response.text();
+        }
+
+    } catch (error) {
+        resultDiv.innerHTML = `Error: ${error.message}`;
+    }
+});
+
+// MODIFICARE CONTRACT
+document.getElementById('modificareContractForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const authToken = document.getElementById('result-auth').textContent;
+    const field1 = document.getElementById('field8').value;
+    const field2 = document.getElementById('field9').value;
+    const resultDiv = document.getElementById('result-modificare-contract');
+    
+    try {
+        const response = await fetch('api/modificare-contract.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

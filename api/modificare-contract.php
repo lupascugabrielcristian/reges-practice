@@ -21,7 +21,7 @@ $headers = [
     'Content-Type: application/json',
 ];
 
-$numarContract = $data['field1'] ?? '';
+$field1 = $data['field1'] ?? '';
 $field2 = $data['field2'] ?? '';
 
 // JSON body
@@ -31,11 +31,15 @@ $body = [
       'messageId'=> '1365ecae-87c4-4b68-ab40-18c0ef0201bd',
       'clientApplication'=> 'SAP',
       'version'=> '5',
-      'operation'=> 'AdaugareContract',
+      'operation'=> 'ModificareContract',   // Asta este diferit fata de apelul adaugare contract
       'authorId'=> '232f7dfc-0c36-4c23-aea7-271415372cde',
       'sessionId'=> '4cb5fe70-4626-42f8-b278-0255e377b9ea',
       'user'=> 'practice_reges',
       'timestamp'=> '2024-06-18T14:19:58.917Z',
+    ],
+    'referintaContract' => [
+        '$type' => 'referinta',
+        'id' => 'd6637f86-2c6f-4f21-8e3f-3b28befd617c' // Este necesar asta. Se obtine cu exportul din interfata web.
     ],
     'continut' => [
         '$type' => 'continutContract',
@@ -87,9 +91,6 @@ $body = [
 ];
 $jsonData = json_encode($body, JSON_FORCE_OBJECT); // Parametrul JSON_FORCE_OBJECT, pentru a transforma stareCurenta in {} in loc de []
 
-// suprascriu cu ce vine din request
-$field1 = $data['field1'] ?? '';
-$field2 = $data['field2'] ?? '';
 
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_URL, $url);
