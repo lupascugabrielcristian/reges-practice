@@ -267,6 +267,54 @@ document.getElementById('suspendareContractForm').addEventListener('submit', asy
     }
 });
 
+// MODIFICARE SUSPENDARE
+document.getElementById('modificareSuspendareForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const authToken = document.getElementById('result-auth').textContent;
+    const field1 = document.getElementById('field11').value;
+    const resultDiv = document.getElementById('result-modificare-suspendare');
+    
+    try {
+        const response = await fetch('api/modificare-suspendare.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ authToken, field1 })
+        });
+        
+        try {
+            let dataJson = await response.clone().json();
+
+            if (!dataJson ) {
+                resultDiv.innerHTML = `Server errr: ${dataJson }`;
+            } 
+            else {
+                if (dataJson.status == 200) {
+                    resultDiv.innerHTML = JSON.stringify(dataJson.response)
+                } else if (dataJson.status == 2000) {
+                    resultDiv.innerHTML = 'CERERE TRIMISA </br>'+ dataJson.response;
+                }
+                else if (dataJson.status == 400) {
+                    resultDiv.innerHTML = 'BAD REQUEST </br>'+ dataJson.response;
+                }
+                else if (dataJson.status == 401) {
+                    resultDiv.innerHTML = '401 - Tokenul a exirat';
+                }
+                else {
+                    resultDiv.innerHTML = JSON.stringify(dataJson);
+                }
+            }
+        } catch (err_p) {
+            resultDiv.innerHTML = await response.text();
+        }
+
+    } catch (error) {
+        resultDiv.innerHTML = `Error: ${error.message}`;
+    }
+});
+
 // READ MESSAGE
 document.getElementById('readMessageForm').addEventListener('submit', async (e) => {
     e.preventDefault();
