@@ -7,7 +7,7 @@ php -S localhost:8000
 - [ ]  modificare salariat
     - [x]  prenume
 - [x]  adaugare contract
-    - [x]  din API nu ma forteaza sa dau localitatea. Pot sa o dau totusi?
+    - [x] cu localitate - din API nu ma forteaza sa dau localitatea
 - [ ]  modificare contract
     - [x]  numar ore
 - [x]  suspendare contract

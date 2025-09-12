@@ -22,6 +22,7 @@ $headers = [
 ];
 
 // JSON body
+// Foloseste scriptul 'adaugare-contract-2.php' pentru variante de PHP - lista asociativa 
 $body = '{
   "$type" : "contract",
   "header": {

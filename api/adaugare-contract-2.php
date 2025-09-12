@@ -41,7 +41,7 @@ $body = [
         '$type' => 'continutContract',
         'referintaSalariat' => [
             '$type' => 'referinta',
-            'id' => '166a4935-e219-432d-aae1-5edea0cbf672'
+            'id' => 'f8495596-e9c3-4a60-98fe-1b3679cbeb6c'
         ],
         'cor' => [
             'cod' => 251204,
@@ -52,10 +52,10 @@ $body = [
         'tipNorma' => 'NormaIntreaga', // Tip norma (pagina 3)
         'tipLocMunca' => 'Fix', // Loc de munca (pagina 3)
         'judetLocMunca' =>  'AG', // Judet loc de munca (pagina 3). Aparent localitatea nu se da din api :))
-        'localitateLocMunca' => [
-            'codSiruta' => 123905,     // Judetul loc munca va fi luat din codul asta. Nomenclator localitate
+        'localitateLocMunca' => [  // Loc de munca (pagina 3) Nomenclator: Localitate
+            'codSiruta' => 123905,    // Judetul loc munca va fi luat din codul asta. Nomenclator localitate
             'judetLocMunca' =>  'AG' // Fara asta nu merge, dar nici nu il in considerare pentru "Judet loc de munca" ci foloseste judetul localitatii cu codul dat
-        ], // Loc de munca (pagina 3) Nomenclator: Localitate
+        ],
         'stareCurenta' => [],   // Trimite o eroare de la server daca nu este adaugat
         'timpMunca' =>  [
             'norma' => 'NormaIntreaga840', // Durata timp munca (pagina 2)
