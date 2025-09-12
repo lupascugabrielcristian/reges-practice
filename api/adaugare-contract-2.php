@@ -39,7 +39,7 @@ $body = [
     ],
     'continut' => [
         '$type' => 'continutContract',
-        'referintaSalariat' => [
+        'referintaSalariat' => [ // Este necesar. Se obtine folosind export din interfata web. Am facut script de parsare parse_salariati_export.php 
             '$type' => 'referinta',
             'id' => 'f8495596-e9c3-4a60-98fe-1b3679cbeb6c'
         ],
